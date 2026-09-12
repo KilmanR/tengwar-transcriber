@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tengwar Transcriber — Письмена эльфов</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <h1>Tengwar Transcriber</h1>
+    <p class="sub">Английский и русский → письмена эльфов (тенгвар)</p>
+  </div>
+</header>
+
+<main class="app">
+
+  <section class="card input-card">
+    <div class="card-head">
+      <label for="input">Введите текст на английском:</label>
+    </div>
+    <textarea id="input" rows="3" spellcheck="false"
+      placeholder="One Ring to rule them all...">One Ring to rule them all</textarea>
+    <div class="tools">
+      <button type="button" data-preset="ltr" class="chip">Кольцо</button>
+      <button type="button" data-preset="lotr" class="chip">LOTR</button>
+      <button type="button" data-preset="wow" class="chip">WoW</button>
+      <button type="button" data-preset="elf" class="chip">Эльфийское</button>
+    </div>
+  </section>
+
+  <section class="card output-card">
+    <div class="card-head">
+      <span>Тенгвар:</span>
+      <span class="hint" id="hint"></span>
+    </div>
+    <div id="output" class="tengwa-output annatar" dir="ltr" aria-live="polite"></div>
+    <div id="translit" class="translit"></div>
+  </section>
+
+  <footer class="controls">
+    <div class="control">
+      <label for="font">Шрифт</label>
+      <select id="font">
+        <option value="annatar">Tengwar Annatar</option>
+        <option value="parmaite">Tengwar Parmaite</option>
+        <option value="alcarin">Alcarin</option>
+        <option value="ariador">Ariador</option>
+        <option value="artano">Artano (Кольцо)</option>
+      </select>
+    </div>
+    <div class="control">
+      <label for="mode">Режим</label>
+      <select id="mode">
+        <option value="general-use">General Use (англ.)</option>
+        <option value="classical">Classical (квенья)</option>
+        <option value="beleriand">Beleriand</option>
+      </select>
+    </div>
+    <div class="control">
+      <label for="size">Размер</label>
+      <input type="range" id="size" min="24" max="120" value="56">
+    </div>
+  </footer>
+
+  <section class="card about">
+    <h2>Как это работает</h2>
+    <p>
+      Текст набирается латиницей в <em>фонетической приближённости</em>: транскрайбер переводит
+      английский (общий режим/General Use), квенья (классический) или синдарин в письменность тенгвар.
+      Шрифты <strong>Annatar</strong> и <strong>Parmaite</strong> — из проекта
+      <a href="https://github.com/kriskowal/tengwarjs" target="_blank" rel="noopener">tengwarjs</a> (MIT).
+    </p>
+    <p class="ps">Тенгвар — письменность, придуманная Дж. Р. Р. Толкином; надпись на Единственном Кольце — самый известный её пример.</p>
+  </section>
+
+  <footer class="page-footer">
+    <p>Tengwar Transcriber · собран на <a href="https://github.com/KilmanR/tengwar-transcriber" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+</main>
+
+<script src="js/tengwar-core.js"></script>
+<script src="js/tengwar-pua.js"></script>
+<script src="js/transcriber.js"></script>
+</body>
+</html>
