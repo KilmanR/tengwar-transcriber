@@ -116,6 +116,94 @@ textarea:focus { border-color: var(--gold); }
     transition: all .2s;
 }
 .chip:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,162,39,0.08); }
+.chip.gold {
+    background: rgba(201,162,39,0.12);
+    border-color: var(--gold);
+    color: var(--gold);
+    font-weight: bold;
+}
+.chip.gold:hover { background: rgba(201,162,39,0.22); }
+
+.preset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.preset {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: all .2s;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.preset:hover { border-color: var(--gold); background: #272b1f; transform: translateY(-2px); }
+.preset-preview {
+    font-size: 26px;
+    line-height: 1.5;
+    color: var(--gold);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.preset-latin { font-size: 13px; color: var(--text); font-style: italic; line-height: 1.4; }
+.preset-meta { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+.preset-preview.annatar { font-family: "Tengwar Annatar", serif; }
+.preset-preview.parmaite { font-family: "Tengwar Parmaite", serif; }
+.preset-preview.alcarin { font-family: "Tengwar Alcarin", serif; }
+.preset-preview.ariador { font-family: "Tengwar Ariador", serif; }
+.preset-preview.artano { font-family: "Tengwar Artano", serif; }
+
+.export-card {
+    position: fixed;
+    left: -10000px;
+    top: 0;
+    width: 840px;
+    background: #10120d;
+    padding: 0;
+    z-index: -1;
+}
+.export-frame {
+    border: 2px solid var(--gold);
+    border-radius: 14px;
+    margin: 24px;
+    padding: 30px;
+    background:
+        radial-gradient(600px 300px at 50% 0%, rgba(201,162,39,0.10), transparent 60%),
+        #181b13;
+    position: relative;
+}
+.export-frame::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(201,162,39,0.35);
+    border-radius: 8px;
+    pointer-events: none;
+}
+.export-glyphs {
+    font-size: 60px;
+    line-height: 1.8;
+    text-align: center;
+    color: var(--gold);
+    padding: 30px 10px;
+    word-wrap: break-word;
+}
+.export-glyphs.annatar { font-family: "Tengwar Annatar", serif; }
+.export-glyphs.parmaite { font-family: "Tengwar Parmaite", serif; }
+.export-glyphs.alcarin { font-family: "Tengwar Alcarin", serif; }
+.export-glyphs.ariador { font-family: "Tengwar Ariador", serif; }
+.export-glyphs.artano { font-family: "Tengwar Artano", serif; }
+.export-glyphs .pua-error { background: rgba(220,60,60,.15); }
+.export-trans {
+    text-align: center;
+    color: #9a9277;
+    font-style: italic;
+    font-size: 18px;
+    padding: 10px 20px 20px;
+    border-top: 1px dashed rgba(201,162,39,0.35);
+    margin-top: 10px;
+}
+.translit.hidden { display: none; }
 
 .tengwa-output {
     min-height: 140px;
