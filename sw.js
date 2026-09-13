@@ -1,5 +1,5 @@
 /* Tengwar Transcriber — offline-first service worker */
-var CACHE = "tengwar-v2";
+var CACHE = "tengwar-v3";
 var ASSETS = [
   "./",
   "index.html",
@@ -41,9 +41,26 @@ self.addEventListener("activate", function (event) {
 });
 
 self.addEventListener("fetch", function (event) {
+  var req = event.request;
+  if (req.mode === "navigate") {
+    // Сеть в приоритете: новый HTML (например, при пушe) приходит сразу,
+    // кэш — резерв для оффлайна.
+    event.respondWith(
+      fetch(req).then(function (resp) {
+        if (resp && resp.ok) {
+          var copy = resp.clone();
+          caches.open(CACHE).then(function (cache) { cache.put(req, copy); });
+        }
+        return resp;
+      }).catch(function () {
+        return caches.match(req).then(function (c) { return c || caches.match("./"); });
+      })
+    );
+    return;
+  }
   event.respondWith(
-    caches.match(event.request).then(function (cached) {
-      return cached || fetch(event.request).catch(function () { return cached; });
+    caches.match(req).then(function (cached) {
+      return cached || fetch(req).catch(function () { return cached; });
     })
   );
 });
