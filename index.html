@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#10120d">
-<meta name="description" content="Живой конвертер английского и эльфийского в письмена тенгвар. 5 шрифтов, пресеты фраз LOTR и WoW, экспорт в PNG.">
+<meta name="description" content="Живой конвертер английского и эльфийского в письмена тенгвар. 5 шрифтов, темы экспорта, фразы LOTR и WoW, PNG.">
 <title>Tengwar Transcriber — Письмена эльфов</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/svg+xml" href="img/icon.svg">
@@ -25,31 +25,30 @@
   <section class="card input-card">
     <div class="card-head"><label for="input">Введите текст:</label></div>
     <textarea id="input" rows="3" spellcheck="false"
-      placeholder="One Ring to rule them all...">One Ring to rule them all</textarea>
+      placeholder="Ash nazg durbatulûk, ash nazg gimbatul...">Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh burzum-ishi krimpatul</textarea>
     <div class="tools">
-      <button type="button" data-quote="ring" class="chip">Кольцо</button>
-      <button type="button" data-quote="wander" class="chip">Странники</button>
-      <button type="button" data-quote="horde" class="chip">WoW</button>
-      <button type="button" data-quote="elen" class="chip">Эльфийское</button>
-      <button type="button" id="export-btn" class="chip gold">⬇ PNG</button>
+      <button type="button" data-quote="ring" class="chip">💍 Кольцо</button>
+      <button type="button" data-quote="elen" class="chip">Elen síla…</button>
+      <button type="button" data-quote="wander" class="chip">Noro lim</button>
+      <button type="button" data-quote="sindorei" class="chip">Anar'alah</button>
     </div>
   </section>
 
-  <section class="card output-card">
+  <section class="card output-card" id="output-card">
     <div class="card-head"><span>Тенгвар:</span><span class="hint" id="hint"></span></div>
     <div id="output" class="tengwa-output annatar" dir="ltr" aria-live="polite"></div>
-    <div id="translit" class="translit"></div>
+    <div id="translit" class="translit hidden"></div>
   </section>
 
   <footer class="controls">
     <div class="control">
       <label for="font">Шрифт</label>
       <select id="font">
-        <option value="annatar">Tengwar Annatar</option>
-        <option value="parmaite">Tengwar Parmaite</option>
-        <option value="alcarin">Alcarin</option>
-        <option value="ariador">Ariador</option>
-        <option value="artano">Artano (Кольцо)</option>
+        <option value="annatar" title="Классический, полная поддержка (Dan Smith)">Tengwar Annatar</option>
+        <option value="alcarin" title="Элегантный гуманистический (SIL OFL)">Alcarin</option>
+        <option value="artano" title="Стилизация под надпись на Кольце">Artano</option>
+        <option value="eldamar" title="Писчий рукописный стиль (Free Tengwar)">Tengwar Eldamar</option>
+        <option value="formal" title="Строгий официальный стиль (CSUR)">Tengwar Formal</option>
       </select>
     </div>
     <div class="control">
@@ -64,12 +63,52 @@
       <label for="size">Размер</label>
       <input type="range" id="size" min="24" max="120" value="56">
     </div>
+    <p class="font-tip" id="font-tip"></p>
   </footer>
 
-  <section class="card presets-card">
-    <div class="card-head"><span>Пресеты фраз</span></div>
-    <div id="preset-grid" class="preset-grid">
-      <noscript>Включите JavaScript, чтобы увидеть пресеты.</noscript>
+  <section class="card export-panel">
+    <div class="card-head"><span>⬇ Экспорт в PNG</span><span class="hint">размер подстраивается под содержимое</span></div>
+    <div class="export-settings">
+      <label class="color-row" for="bg-color"><span>Фон</span>
+        <input type="color" id="bg-color" value="#050505"></label>
+      <label class="color-row" for="fg-color"><span>Текст</span>
+        <input type="color" id="fg-color" value="#d4af37"></label>
+    </div>
+    <div class="preview-frame" id="preview-frame">
+      <div id="preview" class="preview-glyphs annatar"></div>
+      <div id="preview-trans" class="preview-trans"></div>
+    </div>
+    <div class="export-actions">
+      <button type="button" id="export-btn" class="chip gold big">⬇ Скачать как PNG</button>
+      <span class="export-note">Картинка сохранится с цветами и свечением текущей темы.</span>
+    </div>
+  </section>
+
+  <section class="card themes-card">
+    <div class="card-head"><span>Темы экспорта</span></div>
+    <div class="accordion" id="themes-acc">
+      <div class="acc-group" data-acc="lotr">
+        <button type="button" class="acc-head"><span class="acc-icon">📖</span> Властелин Колец<span class="acc-arrow">▸</span></button>
+        <div class="acc-body"><div class="theme-grid" id="themes-lotr"></div></div>
+      </div>
+      <div class="acc-group" data-acc="wow">
+        <button type="button" class="acc-head"><span class="acc-icon">⚔️</span> World of Warcraft<span class="acc-arrow">▸</span></button>
+        <div class="acc-body"><div class="theme-grid" id="themes-wow"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card phrases-card">
+    <div class="card-head"><span>Фразы</span></div>
+    <div class="accordion" id="phrases-acc">
+      <div class="acc-group" data-acc="lotr">
+        <button type="button" class="acc-head"><span class="acc-icon">📖</span> Властелин Колец<span class="acc-arrow">▸</span></button>
+        <div class="acc-body" id="phrases-lotr"></div>
+      </div>
+      <div class="acc-group" data-acc="wow">
+        <button type="button" class="acc-head"><span class="acc-icon">🌍</span> World of Warcraft<span class="acc-arrow">▸</span></button>
+        <div class="acc-body" id="phrases-wow"></div>
+      </div>
     </div>
   </section>
 
@@ -78,7 +117,8 @@
     <p>
       Текст набирается латиницей и транскрибируется в фонетическом приближении в письменность тенгвар.
       Режимы: <strong>General Use</strong> (английский), <strong>Classical</strong> (квенья),
-      <strong>Beleriand</strong> (синдарин). Шрифты Annatar и Parmaite — из проекта
+      <strong>Beleriand</strong> (синдарин). Шрифты: Annatar, Artano, Alcarin, Eldamar и Formal —
+      все с полной поддержкой письменности тенгвар. Ядро транскрипции — проект
       <a href="https://github.com/kriskowal/tengwarjs" target="_blank" rel="noopener">tengwarjs</a> (MIT).
     </p>
     <p class="ps">Тенгвар — письменность, придуманная Дж. Р. Р. Толкином; надпись на Единственном Кольце — самый известный её пример.</p>

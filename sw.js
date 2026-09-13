@@ -1,5 +1,5 @@
 /* Tengwar Transcriber — offline-first service worker */
-var CACHE = "tengwar-v1";
+var CACHE = "tengwar-v2";
 var ASSETS = [
   "./",
   "index.html",
@@ -9,14 +9,15 @@ var ASSETS = [
   "js/tengwar-core.js",
   "js/tengwar-pua.js",
   "js/html2canvas.min.js",
+  "data/phrases.json",
   "img/icon.svg",
   "img/icon-192.png",
   "img/icon-512.png",
   "fonts/TengwarAnnatar.ttf",
-  "fonts/TengwarParmaite.ttf",
+  "fonts/TengwarEldamar.ttf",
+  "fonts/TengwarFormalCSUR.ttf",
   "fonts/AlcarinTengwar-Regular.ttf",
   "fonts/AlcarinTengwar-Bold.ttf",
-  "fonts/TengwarAriador.otf",
   "fonts/TengwarArtano.ttf"
 ];
 

@@ -1,0 +1,277 @@
+{
+  "wow": {
+    "night_elves": [
+      {
+        "original": "Ishnu-alah",
+        "translation_ru": "«Да сопутствует тебе удача» — приветствие",
+        "language": "Дарнассий",
+        "faction": "Ночные эльфы (Калдорай)",
+        "source": "Дарнасс, WoW"
+      },
+      {
+        "original": "Bal'a dash",
+        "translation_ru": "«Приветствие / Берегись»",
+        "language": "Дарнассий",
+        "faction": "Ночные эльфы (Калдорай)",
+        "source": "эльфы-разведчики, WoW"
+      },
+      {
+        "original": "Ishnu-dal-dieb",
+        "translation_ru": "«И тебе покой» — ответное приветствие",
+        "language": "Дарнассий",
+        "faction": "Ночные эльфы (Калдорай)",
+        "source": "Дарнасс, WoW"
+      },
+      {
+        "original": "Ande'thoras-ethil",
+        "translation_ru": "«Да пребудут с тобой благословения Элуны»",
+        "language": "Дарнассий",
+        "faction": "Ночные эльфы (Калдорай)",
+        "source": "жрицы Элуны, WoW"
+      },
+      {
+        "original": "Elune-adore!",
+        "translation_ru": "«Слава Элуне!» — боевой призыв",
+        "language": "Дарнассий",
+        "faction": "Ночные эльфы (Калдорай)",
+        "source": "Warcraft III"
+      },
+      {
+        "original": "Elune will be our guide.",
+        "translation_ru": "«Элуна будет нашим проводником»",
+        "language": "общий (англ.)",
+        "faction": "Ночные эльфы (Калдорай)",
+        "source": "Тиранда, WoW"
+      },
+      {
+        "original": "By the light of Elune!",
+        "translation_ru": "«Светом Элуны!» — призыв в бою",
+        "language": "общий (англ.)",
+        "faction": "Ночные эльфы (Калдорай)",
+        "source": "стражи Элуны, WoW"
+      }
+    ],
+    "blood_elves": [
+      {
+        "original": "Anar'alah belore",
+        "translation_ru": "«Светом солнца клянусь» — клятва эльфов крови",
+        "language": "Талассийский",
+        "faction": "Эльфы крови (Син'дорай)",
+        "source": "Warcraft III"
+      },
+      {
+        "original": "Shorel'aran",
+        "translation_ru": "«Прощание / До встречи»",
+        "language": "Талассийский",
+        "faction": "Эльфы крови (Син'дорай)",
+        "source": "Кель'Талас, WoW"
+      },
+      {
+        "original": "Selama ashal'anore",
+        "translation_ru": "«Пусть свет дня станет вашим спутником» — прощание",
+        "language": "Талассийский",
+        "faction": "Эльфы крови (Син'дорай)",
+        "source": "Сильвермун, WoW"
+      },
+      {
+        "original": "Anar'alah",
+        "translation_ru": "«Солнечный свет» — приветствие",
+        "language": "Талассийский",
+        "faction": "Эльфы крови (Син'дорай)",
+        "source": "Warcraft III"
+      },
+      {
+        "original": "Bal'a dash, malanore",
+        "translation_ru": "«Берегись, друг мой»",
+        "language": "Талассийский",
+        "faction": "Эльфы крови (Син'дорай)",
+        "source": "разведчики, WoW"
+      },
+      {
+        "original": "For the Sunwell!",
+        "translation_ru": "«За Солнечный Колодец!» — боевой клич Кель'таса",
+        "language": "общий (англ.)",
+        "faction": "Эльфы крови (Син'дорай)",
+        "source": "Кель'тас, WoW: ТBC"
+      },
+      {
+        "original": "The Sun will rise again.",
+        "translation_ru": "«Солнце взойдёт вновь» — надежда Син'дорай",
+        "language": "общий (англ.)",
+        "faction": "Эльфы крови (Син'дорай)",
+        "source": "лор эльфов крови, WoW"
+      }
+    ],
+    "high_elves": [
+      {
+        "original": "Felo'melorn",
+        "translation_ru": "«Пламя меча» — имя фамильного клинка Древних эльфов",
+        "language": "Талассийский",
+        "faction": "Высшие эльфы (Кель'дорай)",
+        "source": "дом Иссаррианов, Warcraft"
+      },
+      {
+        "original": "Anu belore dela'na",
+        "translation_ru": "«Пусть Солнце ведёт тебя»",
+        "language": "Талассийский",
+        "faction": "Высшие эльфы (Кель'дорай)",
+        "source": "жрецы Кель'Таласа"
+      },
+      {
+        "original": "For Quel'Thalas!",
+        "translation_ru": "«За Кель'Талас!» — боевой клич",
+        "language": "общий (англ.)",
+        "faction": "Высшие эльфы (Кель'дорай)",
+        "source": "высшие эльфы, Warcraft"
+      },
+      {
+        "original": "Quel'dorei",
+        "translation_ru": "«Народ высших (эльфов)» — самоназвание",
+        "language": "Талассийский",
+        "faction": "Высшие эльфы (Кель'дорай)",
+        "source": "язык Кель'дорай"
+      },
+      {
+        "original": "Silvermoon will rise again.",
+        "translation_ru": "«Серебряная Луна вновь восстанет»",
+        "language": "общий (англ.)",
+        "faction": "Высшие эльфы (Кель'дорай)",
+        "source": "Квел'Талас, WoW"
+      }
+    ]
+  },
+  "lotr": {
+    "quenya": [
+      {
+        "original": "Elen síla lúmenn' omentielvo",
+        "translation_ru": "«Звезда сияет в час нашей встречи» — приветствие",
+        "language": "Квенья",
+        "faction": "Нолдор (высокое наречие)",
+        "source": "Братство Кольца"
+      },
+      {
+        "original": "Namárië!",
+        "translation_ru": "«Прощай!» — возглас прощания",
+        "language": "Квенья",
+        "faction": "Нолдор (высокое наречие)",
+        "source": "Плач Галадриэль"
+      },
+      {
+        "original": "A Elbereth Gilthoniel, silivren penna míriel o menel aglar elenath!",
+        "translation_ru": "«О Эльберет Гилтониэль, серебряно сияющая над нами» — гимн Варде",
+        "language": "Квенья",
+        "faction": "Нолдор (высокое наречие)",
+        "source": "Братство Кольца"
+      },
+      {
+        "original": "Aiya Eärendil Elenion Ancalima!",
+        "translation_ru": "«Привет, Эарендиль, ярчайший из звёзд!»",
+        "language": "Квенья",
+        "faction": "Нолдор (высокое наречие)",
+        "source": "Братство Кольца"
+      },
+      {
+        "original": "Ai! laurië lantar lassi súrinen, yéni únótimë ve rámar aldaron",
+        "translation_ru": "«Ах! Золотом падают листья на ветру, бессчётные годы, как крылья деревьев» — плач Галадриэль",
+        "language": "Квенья",
+        "faction": "Нолдор (высокое наречие)",
+        "source": "Братство Кольца"
+      },
+      {
+        "original": "Yé! Utúlie'n aurë! Aiya Eldalië ar Atanatári, utúlie'n aurë!",
+        "translation_ru": "«День настал! Привет, народ эльфов и отцы людей, день настал!»",
+        "language": "Квенья",
+        "faction": "Нолдор (высокое наречие)",
+        "source": "Возвращение Короля"
+      },
+      {
+        "original": "Auta i lómë!",
+        "translation_ru": "«Ночь уходит!»",
+        "language": "Квенья",
+        "faction": "Нолдор (высокое наречие)",
+        "source": "Две крепости"
+      }
+    ],
+    "sindarin": [
+      {
+        "original": "Mae govannen!",
+        "translation_ru": "«Добро пожаловать / Рад встрече»",
+        "language": "Синдарин",
+        "faction": "Синдар (серое наречие)",
+        "source": "Братство Кольца"
+      },
+      {
+        "original": "Gi suilon!",
+        "translation_ru": "«Приветствую тебя!» — приветствие",
+        "language": "Синдарин",
+        "faction": "Синдар (серое наречие)",
+        "source": "эльфийский этикет"
+      },
+      {
+        "original": "Noro lim, noro lam!",
+        "translation_ru": "«Спеши, как свет, спеши без устали!» — о быстроногом коне",
+        "language": "Синдарин",
+        "faction": "Синдар (серое наречие)",
+        "source": "Братство Кольца"
+      },
+      {
+        "original": "Aerin o galadh",
+        "translation_ru": "«Ветер сквозь деревья»",
+        "language": "Синдарин",
+        "faction": "Синдар (серое наречие)",
+        "source": "эльфийское присловие"
+      },
+      {
+        "original": "I amar prestar aen",
+        "translation_ru": "«Мир изменился» — слова Элронда",
+        "language": "Синдарин",
+        "faction": "Синдар (серое наречие)",
+        "source": "Братство Кольца (фильм)"
+      },
+      {
+        "original": "Le aphadon",
+        "translation_ru": "«Я последую за тобой»",
+        "language": "Синдарин",
+        "faction": "Синдар (серое наречие)",
+        "source": "Братство Кольца (фильм)"
+      },
+      {
+        "original": "Navaer!",
+        "translation_ru": "«Прощай!» — возглас прощания",
+        "language": "Синдарин",
+        "faction": "Синдар (серое наречие)",
+        "source": "эльфийский этикет"
+      }
+    ],
+    "black_speech": [
+      {
+        "original": "Ash nazg durbatulûk, ash nazg gimbatul, ash nazg thrakatulûk agh burzum-ishi krimpatul.",
+        "translation_ru": "«Одно Кольцо, чтобы править ими всеми…» — надпись на Кольце",
+        "language": "Чёрное Наречие",
+        "faction": "Мордор (Саурон)",
+        "source": "Братство Кольца"
+      },
+      {
+        "original": "Ash nazg durbatulûk",
+        "translation_ru": "«Одно Кольцо, чтобы править ими»",
+        "language": "Чёрное Наречие",
+        "faction": "Мордор (Саурон)",
+        "source": "надпись на Кольце"
+      },
+      {
+        "original": "Ash nazg gimbatul",
+        "translation_ru": "«Одно Кольцо, чтобы найти их»",
+        "language": "Чёрное Наречие",
+        "faction": "Мордор (Саурон)",
+        "source": "надпись на Кольце"
+      },
+      {
+        "original": "Ash nazg thrakatulûk agh burzum-ishi krimpatul",
+        "translation_ru": "«Одно Кольцо, чтобы призвать их и во тьме связать»",
+        "language": "Чёрное Наречие",
+        "faction": "Мордор (Саурон)",
+        "source": "надпись на Кольце"
+      }
+    ]
+  }
+}

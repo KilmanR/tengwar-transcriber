@@ -1,0 +1,22 @@
+{
+  "name": "tengwar-transcriber",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Живой конвертер в письмена тенгвар: 5 шрифтов, темы экспорта, фразы LOTR и WoW, PNG-экспорт.",
+  "scripts": {
+    "lint:html": "htmlhint index.html",
+    "lint:css": "stylelint \"css/**/*.css\"",
+    "lint:js": "eslint js/transcriber.js js/tengwar-pua.js sw.js",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "test": "node test/headless.mjs"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "htmlhint": "^1.1.4",
+    "puppeteer-core": "^23.11.1",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}
