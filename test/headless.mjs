@@ -105,13 +105,32 @@ const markInfo = await page.evaluate(() => {
 });
 ok("PUA-метки позиционируются absolute", markInfo.abs && markInfo.count > 0);
 
-// 4. аккордеон: one-open
+// 4. аккордеон: one-open (классы) + реальное схлопывание по высоте
 await page.click('#phrases-acc .acc-group[data-acc="wow"] .acc-head');
 const accState = await page.evaluate(() => {
   const groups = Array.from(document.querySelectorAll("#phrases-acc .acc-group"));
   return groups.filter(g => g.classList.contains("open")).map(g => g.getAttribute("data-acc"));
 });
 ok("аккордеон фраз: открыта только WoW", accState.length === 1 && accState[0] === "wow");
+
+const accHeights = await page.evaluate(async () => {
+  const sb = s => Math.round(document.querySelector(s).getBoundingClientRect().height);
+  const groups = document.querySelectorAll("#themes-acc .acc-group, #phrases-acc .acc-group");
+  groups.forEach(g => g.classList.remove("open"));
+  await new Promise(r => setTimeout(r, 600));
+  const closed = {
+    themes: sb("#themes-acc .acc-group[data-acc='lotr'] .acc-body"),
+    phLotr: sb("#phrases-acc .acc-group[data-acc='lotr'] .acc-body"),
+    phWow: sb("#phrases-acc .acc-group[data-acc='wow'] .acc-body")
+  };
+  document.querySelector("#phrases-acc .acc-group[data-acc='lotr']").classList.add("open");
+  await new Promise(r => setTimeout(r, 600));
+  const opened = sb("#phrases-acc .acc-group[data-acc='lotr'] .acc-body");
+  const openCount = document.querySelectorAll("#themes-acc .acc-group.open, #phrases-acc .acc-group.open").length;
+  return { closed, opened, openCount };
+});
+ok("аккордеон реально схлопывается (закрыт ≈ 0px)", accHeights.closed.themes <= 1 && accHeights.closed.phLotr <= 1 && accHeights.closed.phWow <= 1);
+ok("аккордеон раскрывается по клику (>1000px) и остаётся one-open", accHeights.opened > 1000 && accHeights.openCount === 1);
 
 // 5. чипы квотинга
 await page.click('[data-quote="wanber"]').catch(() => null);
@@ -122,7 +141,8 @@ ok("чип 'Noro lim' вставил фразу", /Noro lim/.test(quoteVal));
 // 6. темы: клик по Валинор меняет фон карточки
 const themeCount = await page.evaluate(() => document.querySelectorAll(".theme-card").length);
 ok("из 8 тем построено 8 карточек", themeCount === 8);
-await page.click('.theme-card[data-theme="valinor"]');
+await page.click('#themes-acc .acc-group[data-acc="lotr"] .acc-head');
+await page.$eval('.theme-card[data-theme="valinor"]', el => el.click());
 const themeBg = await page.evaluate(() => document.getElementById("output-card").style.background);
 ok("тема Валинор применена", themeBg === "rgb(74, 58, 18)");
 

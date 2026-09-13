@@ -361,7 +361,8 @@ textarea:focus { border-color: var(--gold); }
 
 .acc-body {
     display: grid;
-    grid-template-rows: 0fr;
+    grid-template-rows: minmax(0, 0fr);
+    grid-auto-rows: minmax(0, 0fr);
     transition: grid-template-rows .35s ease;
 }
 
@@ -369,7 +370,11 @@ textarea:focus { border-color: var(--gold); }
     min-height: 0;
     overflow: hidden;
 }
-.acc-group.open .acc-body { grid-template-rows: 1fr; }
+
+.acc-group.open .acc-body {
+    grid-template-rows: minmax(0, 1fr);
+    grid-auto-rows: minmax(0, 1fr);
+}
 
 /* ---------- Темы экспорта ---------- */
 .theme-grid {
@@ -433,7 +438,8 @@ textarea:focus { border-color: var(--gold); }
 }
 
 /* ---------- Фразы ---------- */
-#phrases-lotr, #phrases-wow { padding: 14px; }
+#phrases-lotr, #phrases-wow { padding: 0; }
+.acc-group.open #phrases-lotr, .acc-group.open #phrases-wow { padding: 14px; }
 
 .phrase-sub {
     color: var(--gold);

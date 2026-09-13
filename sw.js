@@ -1,5 +1,5 @@
 /* Tengwar Transcriber — offline-first service worker */
-var CACHE = "tengwar-v3";
+var CACHE = "tengwar-v4";
 var ASSETS = [
   "./",
   "index.html",
@@ -58,9 +58,18 @@ self.addEventListener("fetch", function (event) {
     );
     return;
   }
+  // Статика: stale-while-revalidate — сразу из кэша, фон обновляет копию,
+  // поэтому после пуша новый HTML/CSS/JS доезжает сам.
   event.respondWith(
     caches.match(req).then(function (cached) {
-      return cached || fetch(req).catch(function () { return cached; });
+      var fresh = fetch(req).then(function (resp) {
+        if (resp && resp.ok) {
+          var copy = resp.clone();
+          caches.open(CACHE).then(function (cache) { cache.put(req, copy); });
+        }
+        return resp;
+      }).catch(function () { return cached; });
+      return cached || fresh;
     })
   );
 });
