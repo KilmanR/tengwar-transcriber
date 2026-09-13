@@ -80,6 +80,7 @@
         exportGlyphs.innerHTML = outputEl.innerHTML;
         exportGlyphs.className = "export-glyphs " + font;
         exportTrans.textContent = text;
+        refreshPresets();
         saveState();
     }
 
@@ -111,15 +112,16 @@
         } catch (e) {}
     }
 
+    var presetPreviews = [];
+
     function buildPresets() {
-        PRESETS.forEach(function (p, i) {
+        PRESETS.forEach(function (p) {
             var card = document.createElement("div");
             card.className = "preset";
             card.title = p.cat + " · " + p.d;
 
             var preview = document.createElement("div");
             preview.className = "preset-preview";
-            preview.appendChild(document.createTextNode(renderText(p.t.replace(/\n/g, " "), fontEl.value, modeEl.value)));
 
             var latin = document.createElement("div");
             latin.className = "preset-latin";
@@ -137,6 +139,16 @@
                 render();
             });
             presetGrid.appendChild(card);
+            presetPreviews.push({ p: p, el: preview });
+        });
+    }
+
+    function refreshPresets() {
+        var font = fontEl.value;
+        var modeName = modeEl.value;
+        presetPreviews.forEach(function (entry) {
+            entry.el.className = "preset-preview " + font;
+            entry.el.textContent = renderText(entry.p.t.replace(/\n/g, " "), font, modeName);
         });
     }
 
