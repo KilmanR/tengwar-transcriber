@@ -644,6 +644,7 @@ textarea:focus { border-color: var(--gold); }
         font-size: 22px;
         letter-spacing: 2px;
     }
+
     .tengwa-output { font-size: 40px; }
     .card { padding: 14px; }
     .theme-grid { grid-template-columns: 1fr; }
@@ -655,4 +656,26 @@ textarea:focus { border-color: var(--gold); }
         align-items: flex-start;
         gap: 10px;
     }
+
+    .acc-head {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+
+    .phrase-sub { font-size: 12px; }
+    .phrase-card { padding: 10px 12px; }
+    .phrase-orig { font-size: 16px; }
+    .phrase-trans { font-size: 13px; }
+    .phrase-meta { font-size: 11px; }
+    .btn-insert {
+        font-size: 12px;
+        padding: 7px 10px;
+    }
+
+    .theme-swatch {
+        width: 32px;
+        height: 32px;
+    }
+    .theme-name { font-size: 13px; }
+    .theme-desc { font-size: 10px; }
 }
